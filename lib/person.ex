@@ -1,8 +1,7 @@
 defmodule Person do
   defstruct [:name, :birth_date]
 
-  def age(person) when person.birth_date != nil  do
-    current_date = Date.utc_today()
+  def age(person, current_date \\ Date.utc_today()) when person.birth_date != nil  do
     years = current_date.year - person.birth_date.year
     birthday_this_year = %{person.birth_date | year: current_date.year}
     # if we already had your birthday this year, remove one year
