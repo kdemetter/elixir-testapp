@@ -18,7 +18,7 @@ defmodule Menumaker do
     raise ArgumentError, message: "menus must have at least #{nr_per_week} items"
   end
 
-  def main do
+  def start(_type, _args) do
     menus = ["a", "b", "c" ,"d", "e", "f", "g", "k","l","m", "n"]
 
     Enum.each(1..10, fn(_x) ->
@@ -28,9 +28,7 @@ defmodule Menumaker do
         IO.puts("#{name_index}.#{entry}")
       end)
       IO.puts("---")
-
     end)
-
 
   end
 
